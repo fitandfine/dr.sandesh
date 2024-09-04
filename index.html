@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9S4G5R4ZMC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9S4G5R4ZMC');
+    </script>
+    <title>Dr. Sandesh Pandit - Contact Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('images/bg.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            overflow-x: hidden;
+            animation: backgroundPulse 10s infinite;
+        }
+    
+        .header {
+            background-color: #0000007c; /* Medical-themed blue */
+            padding: 10px 0;
+            color:rgb(247, 247, 247);
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #00796b; /* Medical teal border */
+        }
+        .header h4:hover{
+            background-color: rgba(119, 123, 175, 0.797);
+            border-radius: 20%;
+            /*width:fit-content;*/
+            text-align: center;
+        }
+        .date-time{
+            color:#d0faf2;
+        }
+    
+        .date-time {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            animation: fadeIn 2s ease-out;
+        }
+    
+        .welcome-message {
+            font-size: 1.8em;
+            margin: 10px 0;
+            animation: fadeIn 3s infinite alternate;
+        }
+    
+        .container {
+            text-align: center;
+            padding: 80px 20px 20px;
+            animation: fadeIn 2s ease-out;
+        }
+    
+        .carousel {
+    width: 25%;
+    max-width: auto;
+    height: 550px; /* Fixed height */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    animation: slideIn 2s ease-out;
+    border: 3px solid #4CAF50; /* Green border for health and healing */
+}
+
+.carousel img {
+    height: 100%; /* Match the container's height */
+    width: auto; /* Adjust width based on aspect ratio */
+    display: block;
+    border-radius: 10px;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+    
+        .personal-info {
+            font-size: 1.5em;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-out;
+        }
+    
+        .buttons-section {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            animation: slideInFromRight 2s ease-out;
+        }
+    
+        .buttons-section button {
+            padding: 15px 25px;
+            font-size: 1em;
+            color: white;
+            background-color: #a9089695; /* Red pill */
+            border: none;
+            border-radius: 50px; /* Pill shape */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            flex: 0 0 calc(50% - 20px);
+        }
+    
+        .buttons-section button:hover {
+            background-color: #f4060699; /* Teal pill */
+            transform: scale(1.3);
+        }
+    
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    
+        .dropdown button {
+            padding: 15px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #310000a6; /* Blue pill */
+            border: none;
+            border-radius: 50px; /* Pill shape */
+            cursor: pointer;
+            width: 90%;
+            max-width: 300px;
+            text-align: center;
+            transition: background-color 0.5s, transform 0.5s;
+        }
+    
+        .dropdown button:hover {
+            background-color: #e74d3ca8; /* Red pill on hover */
+            transform: scale(1.2) rotate(360deg);
+            color: white;
+        }
+    
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #4e0e04cf;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(237, 7, 7, 0.562);
+            z-index: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    
+        .dropdown-content button {
+            color: #eef1f3;
+            padding: 12px 16px;
+            text-decoration:solid;
+            display: block;
+            text-align: left;
+            border:#0000007c;
+            background: none;
+            width: 100%;
+            cursor: pointer;
+        }
+    
+        .dropdown-content button:hover {
+            background-color: #c0ca33; /* Lighter green for a fresh feel */
+            text-align: right;
+            color:#2d3436;
+        }
+    
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    
+        .popup {
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+    
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 90%;
+            animation: fadeIn 0.5s ease-in-out;
+            color: #333;
+            font-size: 1.2em;
+            position: relative;
+        }
+    
+        .popup-content p {
+            margin: 0;
+            line-height: 1.5;
+        }
+    
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: #e74c3c;
+            transition: transform 0.3s, color 0.3s;
+        }
+    
+        .close-btn:hover {
+            transform: rotate(90deg);
+            color: #c0392b;
+        }
+    
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color:#0000007c /* Semi-transparent black */
+        }
+    
+        .footer button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #022d34aa; /*Red pill*/
+            border:solid;
+            border-radius: 50px; /* Pill shape */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        .footer button:hover {
+            background-color: #00796b; /* Teal pill on hover */
+        }
+    
+        @media (max-width: 768px) {
+            .welcome-message {
+                font-size: 1.5em;
+            }
+    
+            .buttons-section button {
+                font-size: 0.9em;
+                padding: 10px 15px;
+                flex: 0 0 100%;
+            }
+        }
+    
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    
+        @keyframes slideInFromRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    
+        @keyframes backgroundPulse {
+            0% { background-color: #283593; }
+            50% { background-color: #1e88e5; }
+            100% { background-color: #283593; }
+        }
+    
+        /* Add styles for the 'name' div */
+        #name {
+            background: rgba(255, 255, 255, 0.7); /* Translucent white background */
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            width: fit-content;
+            margin: auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: fadeIn 2s ease-in-out, slideUp 2s ease-out;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        }
+    
+        /* Style for the h1 tag */
+        #name h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #2d3436; /* Dark gray color */
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards 0.5s; /* Delay start of fade-in */
+        }
+    
+        /* Style for the h2 tag */
+        #name h2 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #636e72; /* Light gray color */
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards 1s; /* Delay start of fade-in */
+        }
+    
+        /* Animation for fading in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    
+        /* Animation for sliding up */
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Header with Current Date and Time -->
+    <div class="header">
+        <div class="date-time" id="date-time"></div>
+        <h4><div class="welcome-message" id="welcome-message"></div></h4>
+    </div>
+<br><br>
+    <div class="container">
+        <div class="carousel" id="carousel">
+            <img src="images/3.jpg" alt="Photo 3">
+            <img src="images/1.jpg" alt="Photo 1">
+            <img src="images/2.jpg" alt="Photo 2">
+           
+            <img src="images/4.jpg" alt="Photo 4">
+            <img src="images/5.jpg" alt="Photo 5">
+           
+        </div>
+
+        <!-- Personal Info -->
+        <div class="personal-info">
+            <div id="name">
+                <p><h1>Dr. Sandesh Pandit</h1></p>
+                <p><h2>MD, General Medicine</h2></p>
+            </div>
+        </div>
+<!--Bold texts for all the button texts-->
+
+        <!-- Dropdown for QR Codes -->
+        <div class="dropdown">
+            <button><h3>QR Codes</h3></button>
+            <div class="dropdown-content">
+                <button onclick="showPopup('images/call.png')"><b>&#x1F4F7; Phone</b></button>
+                <button onclick="showPopup('images/sms.png')"><b>&#x1F4F7; SMS</b></button>
+                <button onclick="showPopup('images/whatsapp.png')"><b>&#x1F4F7; WhatsApp</b></button>
+                <button onclick="showPopup('images/email.png')"><b>&#x1F4F7; Email</b></button>
+                <button onclick="showPopup('images/facebook.png')"><b>&#x1F4F7; Facebook</b></button>
+                <button onclick="showPopup('images/insta.png')"><b>&#x1F4F7; Instagram</b></button>
+                <button onclick="showPopup('images/vcard.png')"><b>&#x1F4F7; Share my Details</b></button>
+            </div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="buttons-section">
+            <button onclick="window.open('tel:+9779803317157', '_self')"><b>&#x1F4DE; Call</b></button>
+            <button onclick="window.open('sms:+9779803317157', '_self')"><b>&#x1F4F1; SMS</b></button>
+            <button onclick="sendWhatsApp()"><b>&#x1F4AC; WhatsApp Message</b></button>
+            <button onclick="sendEmail()"><b>&#x2709; Send Email</b></button>
+            <button onclick="window.open('https://www.facebook.com/pandit.sandesh', '_blank')"><b>&#x1F4F7; Facebook</b></button>
+            <button onclick="window.open('https://www.instagram.com/sandesh__pandit/', '_blank')"><b>&#x1F4F7; Instagram</b></button>
+            <!-- Download vCard Button -->
+            <button onclick="downloadVCard()">&#x1F4C1; Save my number</button>
+        </div>
+    </div>
+
+    <!-- Popup Template for QR Codes -->
+    <div class="popup" id="generic-popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="hidePopup('generic-popup')">&times;</span>
+            <img id="popup-image" src="" alt="QR Code" style="max-width: 300px;">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+       <b> 
+        <button onclick="sharePage()">Share This Page</button>
+        <button onclick="showPopup('images/page.png')">Share QR</button>
+        <button onclick="showDeveloperInfo()">About Developer</button>
+    </b>
+    </div>
+
+    <!-- Popup for Developer Info -->
+    <div class="popup" id="developer-popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="hidePopup('developer-popup')">&times;</span>
+          <b>  <p>This page was developed with love by Anup Chapain. For any inquiries or custom page development, feel free to get in touch!</p>
+            <button onclick="sendDeveloperEmail()">Send me an Email</button>
+            <button onclick="window.open('https://www.instagram.com/anupcp/', '_blank')">See Insta</button></b>
+        </div>
+    </div>
+
+    <script>
+        // Display Current Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        // Carousel Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#carousel img');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 6000); // Change slide every 8 seconds
+        showSlide(currentSlide); // Show first slide initially
+
+        // Healing Quotes Logic
+        const healingQuotes = [
+            "Healing is a matter of time, but it is sometimes also a matter of opportunity.",
+            "The human spirit is stronger than anything that can happen to it.",
+            "Every day is a journey, and the journey itself is home.",
+            "The art of healing comes from nature, not from the physician. Therefore, the physician must start from nature, with an open mind.",
+            "Believe in the process of healing, for it is the first step toward recovery.",
+            "To heal is to touch with love that which we previously touched with fear.",
+            "Health is not just the absence of disease, but a state of complete physical, mental, and social well-being.",
+            "Healing takes courage, and we all have courage, even if we have to dig a little to find it.",
+            "The soul always knows what to do to heal itself. The challenge is to silence the mind.",
+            "Awareness is the first step to healing.",
+            "Healing comes in waves, and maybe today the wave hits the rocks. And that’s okay, that’s okay, darling. You are still healing.",
+            "You have the power to heal your life, and you need to know that.",
+            "The greatest healing therapy is friendship and love.",
+            "Our wounds are often the openings into the best and most beautiful parts of us.",
+            "Healing is not an overnight process. It is a daily cleansing of pain, it is a daily healing of your life.",
+            "You are not a drop in the ocean. You are the entire ocean in a drop.",
+            "To heal is to make whole, to accept all parts of oneself and to love oneself fully.",
+            "The body heals with play, the mind heals with laughter, and the spirit heals with joy.",
+            "Healing does not mean the damage never existed. It means the damage no longer controls our lives.",
+            "Healing is an art. It takes time, it takes practice, it takes love."
+        ];
+
+        function showHealingQuote() {
+            const quoteIndex = Math.floor(Math.random() * healingQuotes.length);
+            document.getElementById('welcome-message').innerText = healingQuotes[quoteIndex];
+        }
+
+        setInterval(showHealingQuote, 6000); // Change healing quote every 4 seconds
+        showHealingQuote(); // Initial healing quote
+
+        // Popup Logic
+        function showPopup(imageSrc) {
+            const popup = document.getElementById('generic-popup');
+            const popupImage = document.getElementById('popup-image');
+            popupImage.src = imageSrc;
+            popup.style.display = 'flex';
+        }
+
+        function hidePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none';
+        }
+
+        // Send Email Function
+        function sendEmail() {
+            window.location.href = "mailto:bless288maniac@gmail.com?subject=from your personal page";
+        }
+
+        // WhatsApp Message Function
+        function sendWhatsApp() {
+            window.open("https://wa.me/9779803317157?text=Hello%20Dr.%20Sandesh%20Pandit,%20I%20found%20your%20personal%20page", "_blank");
+        }
+
+        // Function to share the page using the native share feature
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Check out Dr. Sandesh Pandit\'s Personal Page!',
+                    text: 'Explore Dr. Sandesh Pandit\'s personal page and more!',
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                }).catch((error) => {
+                    console.error('Error sharing:', error);
+                });
+            } else {
+                alert('Sharing is not supported on this device. Please use the QR code instead.');
+            }
+        }
+
+        // Show Developer Info Popup
+        function showDeveloperInfo() {
+            document.getElementById('developer-popup').style.display = 'flex';
+        }
+
+        // Send Email to Developer
+        function sendDeveloperEmail() {
+            window.location.href = "mailto:pleasedontgetconfused@gmail.com?subject=Enquiry From Sandesh's page";
+        }
+
+        // Function to download vCard
+        function downloadVCard() {
+            window.location.href = 'contact.vcf';
+        }
+
+    </script>
+</body>
+</html>
